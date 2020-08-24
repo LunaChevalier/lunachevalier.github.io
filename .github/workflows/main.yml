@@ -16,3 +16,6 @@ jobs:
       run: |
         yarn install
         yarn build
+        git config user.name "Actions Bot"
+        git add docs
+        git commit -m 'auto deploy GitHub Pages'
