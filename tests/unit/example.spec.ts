@@ -5,6 +5,6 @@ describe('Gacha.vue', () => {
   it('renders props.msg when passed', () => {
     const wrapper = shallowMount(Gacha, {
     });
-    expect(wrapper.text()).toMatch("HOME UE");
+    expect(wrapper.text()).toMatch('HOME VUE');
   });
 });
