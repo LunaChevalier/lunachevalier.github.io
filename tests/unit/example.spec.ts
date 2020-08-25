@@ -1,12 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Gacha from '@/components/Gacha.vue';
 
-describe('HelloWorld.vue', () => {
+describe('Gacha.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+    const wrapper = shallowMount(Gacha, {
     });
-    expect(wrapper.text()).toMatch(msg);
+    expect(wrapper.text()).toMatch("HOME UE");
   });
 });
