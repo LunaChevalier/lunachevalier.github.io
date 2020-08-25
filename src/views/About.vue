@@ -8,7 +8,7 @@
 
 <script lang='ts'>
   import { Component, Vue } from 'vue-property-decorator';
-  import Gacha from '@/components/Gacha.vue';
+  import Gacha from "@/components/Gacha.vue";
 
   @Component({
     components: {
