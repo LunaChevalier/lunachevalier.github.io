@@ -5,6 +5,6 @@ describe('My First Test', () => {
     cy.visit('/')
     cy.contains('h1', 'カレー具材ガチャ')
     cy.contains('只今開発中')
-    cy.contains('p', 'HOME VUE')
+    cy.contains('p', 'HOME VE')
   })
 })
