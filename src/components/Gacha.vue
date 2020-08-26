@@ -21,19 +21,20 @@
       return {
         ingres: [],
         count: 1,
-      }
+      };
     }
     private lottery() {
       const ingres: string[] = ['玉ねぎ', '人参', 'じゃがいも', '大根'];
       const out = Array.from(ingres);
-      const count = out.length > this.count ? this.count : out.length
+      const count = out.length > this.count ? this.count : out.length;
       for (let i = 0; i < out.length; i++) {
         const r = Math.floor(Math.random() * (i + 1));
         const tmp = out[i];
         out[i] = out[r];
         out[r] = tmp;
       }
-      this.ingres = out.slice(0, this.count)
+
+      this.ingres = out.slice(0, count);
     }
   }
 </script>
