@@ -1,6 +1,7 @@
 <template>
   <div class="gacha">
-    <button @click="lottery()">push</button>
+    <p>具の数:</p><input v-model="count">
+    <button @click="lottery()">具材を決定</button>
     <GachaResult :ingres="ingres" ></GachaResult>
   </div>
 </template>
@@ -13,25 +14,26 @@
     components: {
       GachaResult,
     },
-    
   })
 
   export default class Gacha extends Vue {
     data() {
       return {
         ingres: [],
+        count: 1,
       }
     }
     private lottery() {
-      const ingres: string[] = ['玉ねぎ', '人参', 'じゃがいも'];
+      const ingres: string[] = ['玉ねぎ', '人参', 'じゃがいも', '大根'];
       const out = Array.from(ingres);
-      for (let i = out.length - 1; i > 0; i--) {
+      const count = out.length > this.count ? this.count : out.length
+      for (let i = 0; i < out.length; i++) {
         const r = Math.floor(Math.random() * (i + 1));
         const tmp = out[i];
         out[i] = out[r];
         out[r] = tmp;
       }
-      this.ingres = out
+      this.ingres = out.slice(0, this.count)
     }
   }
 </script>
