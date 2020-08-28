@@ -17,7 +17,7 @@
   })
 
   export default class Gacha extends Vue {
-    data() {
+    protected data() {
       return {
         ingres: [],
         count: 1,
