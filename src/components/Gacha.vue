@@ -1,7 +1,7 @@
 <template>
   <div class="gacha">
-    <p>具の数:</p><input v-model="count">
-    <button @click="lottery()">具材を決定</button>
+    <p>具の数:</p><input class="count" v-model="count">
+    <button class="lottery" @click="lottery()">具材を決定</button>
     <GachaResult :ingres="ingres" ></GachaResult>
   </div>
 </template>
@@ -17,6 +17,8 @@
   })
 
   export default class Gacha extends Vue {
+    protected count!: number;
+    protected ingres!: string[];
     protected data() {
       return {
         ingres: [],
