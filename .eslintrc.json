@@ -17,6 +17,5 @@
     "vue",
     "@typescript-eslint"
   ],
-  "ignorePatterns": "tests/**",
   "rules": {}
 }
