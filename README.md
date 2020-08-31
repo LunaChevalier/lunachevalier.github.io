@@ -1,34 +1,11 @@
-# sample-vue-project
+# カレー具材ガチャ
 
-## Project setup
-```
-yarn install
-```
+具の数を入れて、具材を決定すると、具の数だけ具材を決定してくれます  
+実装されている具材は以下になります
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+* じゃがいも
+* 玉ねぎ
+* 人参
+* 大根
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+随時追加予定
