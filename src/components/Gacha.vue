@@ -29,7 +29,7 @@
       const ingres: string[] = ['玉ねぎ', '人参', 'じゃがいも', '大根'];
       const out = Array.from(ingres);
       const count = out.length > this.count ? this.count : out.length;
-      for (let i = 0; i < out.length; i++) {
+      for (let i = 0; i < count; i++) {
         const r = Math.floor(Math.random() * (i + 1));
         const tmp = out[i];
         out[i] = out[r];

@@ -31,4 +31,45 @@ describe('Gacha.vue', () => {
     wrapper.find('button').trigger('click');
     expect(lottery).toBeCalled();
   });
+
+  it('lottery test (default size 1)', () => {
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(1);
+  });
+
+  it('lottery test (size 2)', () => {
+    wrapper.vm.count = 2;
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(2);
+  });
+
+  it('lottery test (size 3)', () => {
+    wrapper.vm.count = 3;
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(3);
+  });
+
+  it('lottery test (size 4)', () => {
+    wrapper.vm.count = 4;
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(4);
+  });
+
+  it('lottery test (size 5)', () => {
+    wrapper.vm.count = 5;
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(4);
+  });
+
+  it('lottery test (size 10)', () => {
+    wrapper.vm.count = 10;
+    wrapper.vm.lottery();
+    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingres));
+    expect(wrapper.vm.ingres).toHaveLength(4);
+  });
 });
