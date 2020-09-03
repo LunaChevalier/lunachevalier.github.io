@@ -35,4 +35,4 @@ describe('TargetIngredients.vue', () => {
     expect(wrapper.findAll('.target-ingredient').at(0).text()).toMatch('具1');
     expect(wrapper.findAll('.target-ingredient').at(1).text()).toMatch('具2');
   });
-})
+});
