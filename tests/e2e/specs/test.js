@@ -4,7 +4,7 @@ describe('My First Test', () => {
   it('Visits the app root url', () => {
     cy.visit('/')
     cy.contains('h1', 'カレー具材ガチャ')
-    cy.contains('p', '具の数:')
+    cy.contains('div', '具の数:')
   })
 
   it('input 1', () => {
