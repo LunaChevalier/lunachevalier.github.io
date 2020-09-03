@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>カレー具材ガチャ(テスト)</h1>
+    <h1>カレー具材ガチャ</h1>
     <Gacha></Gacha>
   </div>
 </template>
