@@ -20,7 +20,7 @@
 
   export default class Gacha extends Vue {
     protected count!: number;
-    protected igrs!: string[];
+    protected ingredients!: string[];
     protected data() {
       return {
         ingredients: [],
