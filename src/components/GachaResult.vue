@@ -1,6 +1,6 @@
 <template>
   <div class="gacha-result">
-    <label class="border rounded border-info p-1 m-2" v-for="ingre in ingres">
+    <label class="border rounded border-info p-1 m-2" v-for="ingre in ingredient">
       {{ ingre }}
     </label>
   </div>
@@ -11,7 +11,7 @@ import Vue, { PropType } from 'vue';
 
 export default Vue.extend({
   props: {
-    ingres: Array as PropType<string[]>,
+    ingredient: Array as PropType<string[]>,
   },
 });
 </script>
