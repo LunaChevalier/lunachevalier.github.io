@@ -29,7 +29,7 @@
       return {
         ingredients: [],
         count: 1,
-        targetIngredients: Array.from(ingredient.map((ingre) => ingre.name)), 
+        targetIngredients: Array.from(ingredient.map((ingre) => ingre.name)),
       };
     }
     private lottery() {
