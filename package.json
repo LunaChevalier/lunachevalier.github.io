@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "yarn test:unit & yarn test:e2e",
-    "test:unit": "vue-cli-service test:unit --coverage",
+    "test:unit": "vue-cli-service test:unit --coverage --verbose",
     "test:e2e": "vue-cli-service test:e2e --headless",
     "lint": "vue-cli-service lint --no-fix"
   },
@@ -46,6 +46,9 @@
     "not dead"
   ],
   "jest": {
-    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "collectCoverageFrom": [
+      "*/components/**/*.{vue,ts}"
+    ]
   }
 }
