@@ -1,8 +1,8 @@
 <template>
   <div class="gacha-result">
-    <p v-for="ingre in ingres">
+    <label class="border rounded border-info p-1 m-2" v-for="ingre in ingres">
       {{ ingre }}
-    </p>
+    </label>
   </div>
 </template>
 

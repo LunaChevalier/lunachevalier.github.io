@@ -1,7 +1,7 @@
 <template>
   <div class="gacha">
-    <p>具の数:</p><input class="count" v-model="count">
-    <button class="lottery" @click="lottery()">具材を決定</button>
+    <label class="text-nowrap">具の数:</label><input class="count m-2" v-model="count">
+    <button class="lottery btn btn-primary m-2" @click="lottery()">具材を決定</button>
     <GachaResult :ingres="ingres" ></GachaResult>
   </div>
 </template>

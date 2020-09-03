@@ -1,6 +1,6 @@
 <template>
   <div class="ingredient">
-    <p>{{ ingre }}</p>
+    <div class="rounded">{{ ingre }}</div>
   </div>
 </template>
 
