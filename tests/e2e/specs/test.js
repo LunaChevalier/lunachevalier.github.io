@@ -34,4 +34,21 @@ describe('My First Test', () => {
     cy.get('.lottery').click()
     cy.contains(/(玉ねぎ.*|人参.*|じゃがいも.*|大根.*){4}/)
   })
-})
+
+  it('input ab', () => {
+    cy.visit('/')
+    cy.get('.count').type('{backspace}ab')
+    cy.get('.lottery').should('be.disabled')
+  })
+
+  it('input -1', () => {
+    cy.visit('/')
+    cy.get('.count').type('{backspace}-1')
+    cy.get('.lottery').should('be.disabled')
+  })
+
+  it('input 0', () => {
+    cy.visit('/')
+    cy.get('.count').type('{backspace}0')
+    cy.get('.lottery').should('be.disabled')
+  })})
