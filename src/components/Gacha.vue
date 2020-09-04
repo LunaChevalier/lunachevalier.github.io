@@ -38,7 +38,7 @@
       const out = Array.from(ingredient.map((ingre) => ingre.name));
       const count = out.length > this.count ? this.count : out.length;
       for (let i = 0; i < count; i++) {
-        const r = Math.floor(Math.random() * (i + 1));
+        const r = Math.floor(Math.random() * (this.targetIngredients.length));
         const tmp = out[i];
         out[i] = out[r];
         out[r] = tmp;
