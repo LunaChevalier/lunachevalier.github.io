@@ -1,10 +1,12 @@
 import { shallowMount, config } from '@vue/test-utils';
 import Gacha from '@/components/Gacha.vue';
+import ingredientsData from '../data/ingredients.json';
 
 config.showDeprecationWarnings = false;
 
 describe('Gacha.vue', () => {
   let wrapper: any;
+  const ingrents = ingredientsData.map((ingredient) => ingredient.name);
   beforeEach(() => {
     wrapper = shallowMount(Gacha);
   });
@@ -34,42 +36,42 @@ describe('Gacha.vue', () => {
 
   it('lottery test (default size 1)', () => {
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
     expect(wrapper.vm.ingredients).toHaveLength(1);
   });
 
   it('lottery test (size 2)', () => {
     wrapper.vm.count = 2;
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
     expect(wrapper.vm.ingredients).toHaveLength(2);
   });
 
-  it('lottery test (size 3)', () => {
-    wrapper.vm.count = 3;
+  it('lottery test (size max ingrents - 1)', () => {
+    wrapper.vm.count = ingrents.length - 1;
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(3);
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length - 1);
   });
 
-  it('lottery test (size 4)', () => {
-    wrapper.vm.count = 4;
+  it('lottery test (size max ingrents)', () => {
+    wrapper.vm.count = ingrents.length;
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(4);
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
   });
 
-  it('lottery test (size 5)', () => {
-    wrapper.vm.count = 5;
+  it('lottery test (size max ingrents + 1)', () => {
+    wrapper.vm.count = ingrents.length + 1;
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(4);
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
   });
 
-  it('lottery test (size 10)', () => {
-    wrapper.vm.count = 10;
+  it('lottery test (size max ingrents + 5)', () => {
+    wrapper.vm.count = ingrents.length + 5;
     wrapper.vm.lottery();
-    expect(['玉ねぎ', '人参', 'じゃがいも', '大根']).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(4);
+    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
   });
 });
