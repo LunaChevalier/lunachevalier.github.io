@@ -1,6 +1,6 @@
 import { shallowMount, config } from '@vue/test-utils';
 import Gacha from '@/components/Gacha.vue';
-import ingredientsData from '../data/ingredients.json'
+import ingredientsData from '../data/ingredients.json';
 
 config.showDeprecationWarnings = false;
 
