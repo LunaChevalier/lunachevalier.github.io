@@ -8,7 +8,10 @@
     "test": "yarn test:unit & yarn test:e2e",
     "test:unit": "vue-cli-service test:unit --coverage --verbose",
     "test:e2e": "vue-cli-service test:e2e --headless",
-    "lint": "vue-cli-service lint --no-fix"
+    "lint": "vue-cli-service lint --no-fix",
+    "gr": "yarn gr:build & yarn gr:run",
+    "gr:build": "yarn tsc .\\tools\\generate_auto_readme.ts --resolveJsonModule --esModuleInterop",
+    "gr:run": "node .\\tools\\generate_auto_readme.js"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
