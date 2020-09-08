@@ -1,56 +1,111 @@
 [
   {
-    "name": "人参"
+    "name": "人参",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "じゃがいも"
+    "name": "じゃがいも",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "大根"
+    "name": "大根",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "玉ねぎ"
+    "name": "玉ねぎ",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "セロリ"
+    "name": "セロリ",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "里芋"
+    "name": "里芋",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "カブ"
+    "name": "カブ",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "ゴーヤ"
+    "name": "ゴーヤ",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "きゅうり"
+    "name": "きゅうり",
+    "categories": [
+      "vegetable"
+    ]
   },
   {
-    "name": "カツオのたたき"
+    "name": "カツオのたたき",
+    "categories": [
+      "seafood"
+    ]
   },
   {
-    "name": "ラム肉"
+    "name": "ラム肉",
+    "categories": [
+      "meat"
+    ]
   },
   {
-    "name": "サバの水煮"
+    "name": "サバの水煮",
+    "categories": [
+      "seafood"
+    ]
   },
   {
-    "name": "ブリ"
+    "name": "ブリ",
+    "categories": [
+      "seafood"
+    ]
   },
   {
-    "name": "タコ"
+    "name": "タコ",
+    "categories": [
+      "seafood"
+    ]
   },
   {
-    "name": "ちくわ"
+    "name": "ちくわ",
+    "categories": [
+      "paste"
+    ]
   },
   {
-    "name": "魚肉ソーセージ"
+    "name": "魚肉ソーセージ",
+    "categories": [
+      "paste"
+    ]
   },
   {
-    "name": "こんにゃく"
+    "name": "こんにゃく",
+    "categories": [
+      "etc"
+    ]
   },
   {
-    "name": "ツナ缶"
+    "name": "ツナ缶",
+    "categories": [
+      "seafood",
+      "topping"
+    ]
   }
 ]
