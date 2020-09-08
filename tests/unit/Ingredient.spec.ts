@@ -1,5 +1,7 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, config } from '@vue/test-utils';
 import Ingredient from '@/components/Ingredient.vue';
+
+config.showDeprecationWarnings = false;
 
 describe('Ingredient.vue', () => {
   let wrapper: any;
@@ -18,9 +20,11 @@ describe('Ingredient.vue', () => {
   it('input prop one', () => {
     wrapper = shallowMount(Ingredient, {
       propsData: {
-        ingre: '具1',
+        name: '具1',
+        categories: ['test-class'],
       },
     });
     expect(wrapper.text()).toMatch('具1');
+    expect(wrapper.contains('.test-class')).toBe(true);
   });
 });

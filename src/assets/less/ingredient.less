@@ -1,0 +1,38 @@
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/solid.less";
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/brands.less";
+
+div {
+  .fa-icon;
+  .fas;
+}
+:global(.vegetable) {
+  &:before {
+    content: @fa-var-leaf;
+    color: green;
+  }
+}
+:global(.meat) {
+  &:before {
+    content: @fa-var-drumstick-bite;
+    color: darkred;
+  }
+}
+:global(.seafood) {
+  &:before {
+    content: @fa-var-fish;
+    color: blue;
+  }
+}
+:global(.topping) {
+  &:before {
+    content: @fa-var-wine-bottle;
+    color: blue;
+  }
+}
+:global(.paste) {
+  &:before {
+    content: @fa-var-bacon;
+    color: blue;
+  }
+}
