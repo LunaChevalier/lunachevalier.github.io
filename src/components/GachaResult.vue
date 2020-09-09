@@ -1,9 +1,11 @@
 <template>
-  <div class="gacha-result">
-    <label class="border rounded border-info p-1 m-2" v-for="ingre in ingredients" :key="ingre.name">
-      <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
-    </label>
-  </div>
+  <transition name="gacha-result" mode="out-in">
+    <div>
+      <label class="gacha-ingredient border rounded border-info p-1 m-2" v-for="ingre in ingredients" :key="ingre.name">
+        <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
+      </label>
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">

@@ -2,9 +2,21 @@
 @import "../../../node_modules/@fortawesome/fontawesome-free/less/solid.less";
 @import "../../../node_modules/@fortawesome/fontawesome-free/less/brands.less";
 
-div {
+:global(.ingredient) {
   .fa-icon;
   .fas;
+}
+:global(.gacha-result) {
+  opacity: 1.0;
+  transition: all .5s ease-out;
+}
+:global(.gacha-result-enter-active),
+:global(.gacha-result-leave-active) {
+  transition: all .5s;
+}
+:global(.gacha-result-enter),
+:global(.gacha-result-leave-to) {
+  opacity: 0;
 }
 :global(.vegetable) {
   &:before {
