@@ -11,7 +11,7 @@
   import { Component, Vue } from 'vue-property-decorator';
   import GachaResult from '@/components/GachaResult.vue';
   import TargetIngredients from '@/components/TargetIngredients.vue';
-  import Ingredient from '@/types/Ingredient';
+  import { Ingredient } from '@/types/Ingredient.d.ts';
   import ingredient from '@/assets/json/ingredients.json';
 
   @Component({
