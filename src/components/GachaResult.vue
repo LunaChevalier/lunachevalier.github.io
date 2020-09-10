@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO アニメーションを付けたいが、うまく作動しないので後で実装 -->
   <transition name="gacha-result" mode="out-in">
     <div>
       <label class="gacha-ingredient border rounded border-info p-1 m-2" v-for="ingre in ingredients" :key="ingre.name">
