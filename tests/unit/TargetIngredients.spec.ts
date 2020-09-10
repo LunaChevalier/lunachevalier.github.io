@@ -1,5 +1,7 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, config } from '@vue/test-utils';
 import TargetIngredients from '@/components/TargetIngredients.vue';
+
+config.showDeprecationWarnings = false;
 
 describe('TargetIngredients.vue', () => {
   let wrapper: any;
@@ -18,21 +20,41 @@ describe('TargetIngredients.vue', () => {
   it('input ingredients 1', () => {
     wrapper = shallowMount(TargetIngredients, {
       propsData: {
-        targetIngredients: ['具1'],
+        targetIngredients: [
+          {
+            name: '具1',
+            categories: ['test-class'],
+          },
+        ],
       },
     });
     expect(wrapper.find('.target-ingredients').text()).toMatch('抽選対象になる具材');
-    expect(wrapper.find('.target-ingredient').text()).toMatch('具1');
+    expect(wrapper.findAll('ingredientvue-stub').at(0).attributes().name).toMatch('具1');
+    expect(wrapper.findAll('ingredientvue-stub').at(0).attributes().categories).toMatch('test-class');
+    expect(wrapper.findAll('ingredientvue-stub').length).toBe(1);
   });
 
   it('input ingredients 2', () => {
     wrapper = shallowMount(TargetIngredients, {
       propsData: {
-        targetIngredients: ['具1', '具2'],
+        targetIngredients: [
+          {
+            name: '具1',
+            categories: ['test-class'],
+          },
+          {
+            name: '具2',
+            categories: ['class1', 'class2'],
+          },
+        ],
       },
     });
+
     expect(wrapper.find('.target-ingredients').text()).toMatch('抽選対象になる具材');
-    expect(wrapper.findAll('.target-ingredient').at(0).text()).toMatch('具1');
-    expect(wrapper.findAll('.target-ingredient').at(1).text()).toMatch('具2');
+    expect(wrapper.findAll('ingredientvue-stub').at(0).attributes().name).toMatch('具1');
+    expect(wrapper.findAll('ingredientvue-stub').at(1).attributes().name).toMatch('具2');
+    expect(wrapper.findAll('ingredientvue-stub').at(0).attributes().categories).toMatch('test-class');
+    expect(wrapper.findAll('ingredientvue-stub').at(1).attributes().categories).toMatch('class1,class2');
+    expect(wrapper.findAll('ingredientvue-stub').length).toBe(2);
   });
 });

@@ -5,20 +5,21 @@ describe('My First Test', () => {
     cy.visit('/')
     cy.contains('h1', 'カレー具材ガチャ')
     cy.contains('div', '具の数:')
+    cy.get('.gacha-ingredient').should('not.exist')
   })
 
   it('input 1', () => {
     cy.visit('/')
     cy.get('.count').type('{backspace}1')
     cy.get('.lottery').click()
-    cy.get('#app > div > div > div.gacha-result > label').should('be.visible')
+    cy.get('.gacha-ingredient').should('be.visible')
   })
 
   it('input 2', () => {
     cy.visit('/')
     cy.get('.count').type('{backspace}2')
     cy.get('.lottery').click()
-    cy.get('#app > div > div > div.gacha-result > label').should('be.visible')
+    cy.get('.gacha-ingredient').should('be.visible')
   })
 
   it('input ab', () => {

@@ -6,7 +6,6 @@ config.showDeprecationWarnings = false;
 
 describe('Gacha.vue', () => {
   let wrapper: any;
-  const ingrents = ingredientsData.map((ingredient) => ingredient.name);
   beforeEach(() => {
     wrapper = shallowMount(Gacha);
   });
@@ -36,42 +35,42 @@ describe('Gacha.vue', () => {
 
   it('lottery test (default size 1)', () => {
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
     expect(wrapper.vm.ingredients).toHaveLength(1);
   });
 
   it('lottery test (size 2)', () => {
     wrapper.vm.count = 2;
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
     expect(wrapper.vm.ingredients).toHaveLength(2);
   });
 
-  it('lottery test (size max ingrents - 1)', () => {
-    wrapper.vm.count = ingrents.length - 1;
+  it('lottery test (size max ingredientsData - 1)', () => {
+    wrapper.vm.count = ingredientsData.length - 1;
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length - 1);
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingredientsData.length - 1);
   });
 
-  it('lottery test (size max ingrents)', () => {
-    wrapper.vm.count = ingrents.length;
+  it('lottery test (size max ingredientsData)', () => {
+    wrapper.vm.count = ingredientsData.length;
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingredientsData.length);
   });
 
-  it('lottery test (size max ingrents + 1)', () => {
-    wrapper.vm.count = ingrents.length + 1;
+  it('lottery test (size max ingredientsData + 1)', () => {
+    wrapper.vm.count = ingredientsData.length + 1;
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingredientsData.length);
   });
 
-  it('lottery test (size max ingrents + 5)', () => {
-    wrapper.vm.count = ingrents.length + 5;
+  it('lottery test (size max ingredientsData + 5)', () => {
+    wrapper.vm.count = ingredientsData.length + 5;
     wrapper.vm.lottery();
-    expect(ingrents).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
-    expect(wrapper.vm.ingredients).toHaveLength(ingrents.length);
+    expect(ingredientsData).toEqual(expect.arrayContaining(wrapper.vm.ingredients));
+    expect(wrapper.vm.ingredients).toHaveLength(ingredientsData.length);
   });
 });
