@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Ingredient } from '@/types/Ingredient';
+import { Ingredient } from '@/types/Ingredient.d.ts';
 import IngredientVue from '@/components/Ingredient.vue';
 import Vue, { PropType } from 'vue';
 
