@@ -7,16 +7,13 @@
   .fas;
 }
 :global(.gacha-result) {
-  opacity: 1.0;
-  transition: all .5s ease-out;
-}
-:global(.gacha-result-enter-active),
-:global(.gacha-result-leave-active) {
-  transition: all .5s;
-}
-:global(.gacha-result-enter),
-:global(.gacha-result-leave-to) {
-  opacity: 0;
+  animation-name: fade-out;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 :global(.vegetable) {
   &:before {
@@ -46,5 +43,15 @@
   &:before {
     content: @fa-var-bacon;
     color: blue;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
