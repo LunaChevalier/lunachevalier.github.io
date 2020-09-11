@@ -1,26 +1,9 @@
-:global(#toggle) {
-  display: none;
-  &:checked {
-    & + :global(.gacha-result) {
-      animation-name: fade-in;
-      animation-duration: 0.25s;
-      animation-timing-function: ease-out;
-      animation-delay: 0s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-    }
-    &+ :global(.lottery) {
-      content: "元に戻す";
-    }
-  }
+:global(.fade-enter-active),
+:global(.fade-leave-active) {
+  transition: opacity .25s;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+:global(.fade-enter),
+:global(.fade-leave-to) {
+  opacity: 0;
 }

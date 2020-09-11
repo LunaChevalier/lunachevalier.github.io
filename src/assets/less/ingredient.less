@@ -6,15 +6,6 @@
   .fa-icon;
   .fas;
 }
-:global(.gacha-result) {
-  animation-name: fade-out;
-  animation-duration: 0.25s;
-  animation-timing-function: ease-out;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-}
 :global(.vegetable) {
   &:before {
     content: @fa-var-leaf;
@@ -43,15 +34,5 @@
   &:before {
     content: @fa-var-bacon;
     color: blue;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }

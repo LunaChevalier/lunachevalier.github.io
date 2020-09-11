@@ -25,17 +25,18 @@ describe('My First Test', () => {
   it('input ab', () => {
     cy.visit('/')
     cy.get('.count').type('{backspace}ab')
-    cy.get('.lottery').should('be.disabled')
+    cy.get('.lottery').click()
+    cy.get('.gacha-ingredient').should('not.exist')
   })
 
   it('input -1', () => {
     cy.visit('/')
     cy.get('.count').type('{backspace}-1')
-    cy.get('.lottery').should('be.disabled')
+    cy.get('.gacha-ingredient').should('not.exist')
   })
 
   it('input 0', () => {
     cy.visit('/')
     cy.get('.count').type('{backspace}0')
-    cy.get('.lottery').should('be.disabled')
+    cy.get('.gacha-ingredient').should('not.exist')
   })})
