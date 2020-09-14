@@ -16,3 +16,16 @@
     content: @fa-var-angle-down;
   }
 }
+:global(.target-ingredients) {
+  width: 500px;
+  vertical-align: top;
+}
+:global(.accordion-enter-active),
+:global(.accordion-leave-active) {
+  transition: opacity .25s;
+}
+
+:global(.accordion-enter),
+:global(.accordion-leave-to) {
+  opacity: 0;
+}
