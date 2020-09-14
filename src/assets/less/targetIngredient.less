@@ -1,0 +1,18 @@
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/solid.less";
+@import "../../../node_modules/@fortawesome/fontawesome-free/less/brands.less";
+
+:global(.list-item-less-button) {
+  .fa-icon;
+  .fas;
+  &:before {
+    content: @fa-var-angle-up;
+  }
+}
+:global(.list-item-more-button) {
+  .fa-icon;
+  .fas;
+  &:before {
+    content: @fa-var-angle-down;
+  }
+}

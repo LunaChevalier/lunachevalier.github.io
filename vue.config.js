@@ -1,5 +1,6 @@
 module.exports = {
   assetsDir: "",
   publicPath: "./",
-  outputDir: "docs"
+  outputDir: "docs",
+  lintOnSave: false
 }
