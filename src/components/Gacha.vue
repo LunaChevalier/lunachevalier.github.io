@@ -47,7 +47,7 @@
       if (!this.isResultDisplay) {
         return;
       }
-      const out = ingredient;
+      const out = ingredient.concat();
       const count = out.length > this.count ? this.count : out.length;
       for (let i = 0; i < count; i++) {
         const r = Math.floor(Math.random() * (this.targetIngredients.length));
