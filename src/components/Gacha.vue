@@ -1,9 +1,13 @@
 <template>
   <div class="gacha">
     <TargetIngredients :targetIngredients="targetIngredients"></TargetIngredients>
-    <label class="text-nowrap">具の数:</label><input class="count m-2" v-model="count">
-    <button class="lottery btn btn-primary m-2" @click="lottery()" :disabled="!(Number.isInteger(parseInt(count, 10))) || count < 1">具材を決定</button>
-    <GachaResult :ingredients="ingredients" ></GachaResult>
+    <label class="text-nowrap">具の数:</label><input class="count m-2" v-model.number="count">
+    <label class="lottery btn m-2" :class="isPush() ? 'btn-primary' : 'btn-secondary'" @click="lottery()">
+      {{isResultDisplay ? "もとに戻す" : "具材を決定"}}
+    </label>
+    <transition name="fade">
+      <GachaResult :ingredients="ingredients" v-show="isResultDisplay"></GachaResult>
+    </transition>
   </div>
 </template>
 
@@ -25,6 +29,7 @@
     protected count!: number;
     protected ingredients!: Ingredient[];
     protected targetIngredients!: Ingredient[];
+    protected isResultDisplay = false;
 
     protected data() {
       return {
@@ -35,6 +40,13 @@
     }
 
     private lottery() {
+      if (!this.isPush()) {
+        return;
+      }
+      this.isResultDisplay = !this.isResultDisplay;
+      if (!this.isResultDisplay) {
+        return;
+      }
       const out = ingredient;
       const count = out.length > this.count ? this.count : out.length;
       for (let i = 0; i < count; i++) {
@@ -46,5 +58,13 @@
 
       this.ingredients = out.slice(0, count);
     }
+
+    private isPush(): boolean {
+      return Number.isInteger(this.count) && this.count > 0;
+    }
   }
 </script>
+
+<style module lang='less'>
+  @import '../assets/less/gacha.less';
+</style>
