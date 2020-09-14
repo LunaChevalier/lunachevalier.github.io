@@ -1,9 +1,11 @@
 <template>
-  <div class="target-ingredients">
+  <div>
     <h2>抽選対象になる具材</h2>
-    <label class="target-ingredient border rounded border-info p-1 m-2" v-for="ingre in listItems" :key="ingre.name">
-      <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
-    </label>
+      <label class="target-ingredients">
+        <label class="target-ingredient border rounded border-info p-1 m-2" v-for="ingre in listItems" :key="ingre.name">
+          <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
+        </label>
+      </label>
     <label class="list-item-less-button btn m-2 btn-secondary" v-if="targetIngredients.length == count" type="button" @click="isLess"></label>
     <label class="list-item-more-button btn m-2 btn-primary" v-else type="button" @click="isMore"></label>
   </div>
@@ -25,7 +27,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      count: 2,
+      count: 5,
     };
   },
   computed: {
@@ -39,7 +41,7 @@ export default Vue.extend({
       this.count = this.targetIngredients.length;
     },
     isLess() {
-      this.count = 2;
+      this.count = 5;
     },
   },
 });

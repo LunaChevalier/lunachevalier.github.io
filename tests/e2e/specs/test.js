@@ -4,7 +4,7 @@ describe('My First Test', () => {
     cy.contains('h1', 'カレー具材ガチャ')
     cy.contains('div', '具の数:')
     cy.get('.gacha-ingredient').should('not.exist')
-    cy.get('.target-ingredient .ingredient').should('have.length', 2)
+    cy.get('.target-ingredient .ingredient').should('have.length', 5)
   })
 
   it('input 1', () => {
@@ -50,6 +50,6 @@ describe('My First Test', () => {
     cy.visit('/')
     cy.get('.list-item-more-button').click()
     cy.get('.list-item-less-button').click()
-    cy.get('.target-ingredient .ingredient').should('have.length', 2)
+    cy.get('.target-ingredient .ingredient').should('have.length', 5)
   })
 })
