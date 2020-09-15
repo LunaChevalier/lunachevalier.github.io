@@ -2,9 +2,11 @@
   <div>
     <h2>抽選対象になる具材</h2>
       <label class="target-ingredients">
-        <label class="target-ingredient border rounded border-info p-1 m-2" v-for="ingre in listItems" :key="ingre.name">
-          <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
-        </label>
+        <transition-group name="accordion">
+          <label class="target-ingredient border rounded border-info p-1 m-2" v-for="ingre in listItems" :key="ingre.name">
+            <IngredientVue :name="ingre.name" :categories="ingre.categories"></IngredientVue>
+          </label>
+        </transition-group>
       </label>
     <label class="list-item-less-button btn m-2 btn-secondary" v-if="targetIngredients.length == count" type="button" @click="isLess"></label>
     <label class="list-item-more-button btn m-2 btn-primary" v-else type="button" @click="isMore"></label>

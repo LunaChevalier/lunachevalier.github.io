@@ -20,12 +20,36 @@
   width: 500px;
   vertical-align: top;
 }
-:global(.accordion-enter-active),
-:global(.accordion-leave-active) {
-  transition: opacity .25s;
+:global(.accordion-enter-active) {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-name: accordion--anime__opened;
 }
 
-:global(.accordion-enter),
-:global(.accordion-leave-to) {
-  opacity: 0;
+:global(.accordion-leave-active) {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-name: js-accordion--anime__closed;
+}
+
+@keyframes accordion--anime__opened {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: 600px;
+  }
+}
+
+@keyframes accordion--anime__closed {
+  0% {
+    max-height: 600px;
+  }
+
+  100% {
+    max-height: 0px;
+  }
 }
